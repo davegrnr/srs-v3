@@ -1,12 +1,17 @@
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
-
 /* 
 <========== HEADER ===========> 
 */
 
+header {
+  height: 100px;
+  /* Adjust the height as needed */
+}
 .header-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,16 +53,24 @@ nav#navbar {
   /* Add more properties as needed */
 }
 
-/* Reset the default styles for the list */
+nav#navbar {
+  background-color: black;
+  color: white;
+  /* Change the text color to white for better contrast */
+  padding: 20px 0;
+  /* Add vertical padding to increase navbar height */
+  /* Add more properties as needed */
+  height: 20px;
+}
+
+/* Center the list items horizontally */
 .nav-list {
   list-style-type: none;
-  /* Removes bullet points */
   margin: 0;
   padding: 0;
   display: flex;
-  /* Aligns items inline */
   justify-content: center;
-  /* Centers items horizontally */
+  /* Center items horizontally */
 }
 
 .nav-list li {
@@ -72,42 +85,129 @@ nav#navbar {
 
 .nav-list a {
   text-decoration: none;
-  /* Removes underline from links */
   color: inherit;
-  /* Inherits color from parent */
 }
 
 /* 
 == STICKY NAV ==
  */
 
+/* Add styles for the sticky class */
 .sticky {
   position: fixed;
   width: 100%;
-  left: 0;
-  /* Add this line */
+  top: 0;
   z-index: 1000;
+}
+
+#navbar-container {
+  position: relative;
+  height: 40px;
+  /* Set the container height */
   background-color: black;
-  /* Reset margin and padding if needed */
-  margin: 0;
+  /* Set the container background color */
+  z-index: 1000;
 }
 
-/* Add additional styles as needed */
+#navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  /* Your other navbar styles here */
+}
 
-/* Add this style for section content */
+/* Add styles for the sticky class */
+#navbar.sticky {
+  position: fixed;
+  /* Your sticky navbar styles here */
+}
+
+
+
+
+
+/* 
+<========== MAIN ==========> 
+*/
+
+main {
+  background-image: url('../assets/images/srs-bg3.png');
+  background-color: black;
+  background-size: cover;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: auto;
+  /* Change min-height to auto */
+}
+/* 
+<========= SECTION CONTENT ===========>
+*/
+
 .section-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 100%;
+  /* Set a maximum width for the section content */
+  min-height: 400px;
+  margin: 20px auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  /* Adjust the max-width to your preference */
-  margin: 0 auto;
-  /* Center the content within the section */
-  padding: 20px;
-  /* Add padding as needed */
-  box-sizing: border-box;
-  /* Include padding within max-width */
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: row;
+  /* Add this line to display image and text side by side */
+  overflow-x: auto;
+  /* Enable horizontal scrolling if content overflows */
 }
+
+.section-content .image-content {
+  flex: 1;
+  max-width: 50%;
+  max-height: 400px;
+  /* Set a maximum height for the image */
+  overflow: hidden;
+  /* Hide overflow if the image exceeds max height */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section-content .text-content {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  /* Enable overflow scrolling for text content */
+}
+.section-content-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  /* Add your desired padding here */
+}
+
+.section-content h2 {
+  text-decoration: underline;
+  color: #333;
+  font-size: 20px;
+  /* Adjust font size */
+  margin-bottom: 10px;
+  flex: 1;
+  /* Expand to fill available space */
+}
+
+.section-content p {
+  font-size: 16px;
+  /* Adjust font size */
+  color: #555;
+  margin: 10px 0;
+  flex: 2;
+  /* Expand to fill available space */
+}
+
 
 /* Add this style for alternating layout */
 .grid-section.alt-layout .section-content {
@@ -117,34 +217,19 @@ nav#navbar {
 /* Add this style to ensure alternating margins */
 .grid-section:nth-child(even) .section-content {
   margin-left: 15vw;
+  margin-right: 5vw;
 }
 
 .grid-section:nth-child(odd) .section-content {
   margin-right: 15vw;
+  margin-left: 5vw;
 }
+
 .text-content,
 .image-content {
   color: white;
 }
 
-/* 
-<========== MAIN ==========> 
-*/
-
-main {
-  background-image: url('../assets/images/srs-bg3.png');
-  /* linear-gradient(to right, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), transparent), */
-  /* Dark fade towards the center */
-  /* linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(86, 82, 82, 0.667) 100%),; */
-  /* Adjust the path as necessary */
-  background-size: cover;
-  padding: 0;
-  /* Ensures the image covers the entire area */
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: auto;
-  min-height: 100vh;
-  /* or any other appropriate value */
-  /* Centers the image */
-  /* Add more properties as needed */
+.phone {
+  font-size: x-large;
 }

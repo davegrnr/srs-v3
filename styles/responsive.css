@@ -1,45 +1,74 @@
 /* MOBILE | SMALL SCREEN */
 @media only screen and (max-width: 768px) {
+
   /* == HEADER == */
-    .header-center h1 {
-        font-size: 20px;
-        /* Smaller font size for mobile */
-        /* Adjust the size as needed */
-      }
-    
-      /* If you have other text in the header you'd like to resize */
-      .header-left,
-      .header-right {
-        font-size: 14px;
-        /* Example: smaller font size for other header elements */
-      }
+  .header-center h1 {
+    font-size: 20px;
+    /* Smaller font size for mobile */
+  }
+
+  /* If you have other text in the header you'd like to resize */
+  .header-left,
+  .header-right {
+    font-size: 14px;
+    /* Example: smaller font size for other header elements */
+  }
 
   /* == NAV == */
-  .nav-list {
-    flex-direction: column;
-    /* Stack items vertically */
-    align-items: center;
-  }
 
-  .nav-list li {
-    margin: 10px 0;
-    /* Add vertical space between items */
+  .navbar-container{ 
+          background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1) 100%), url('../assets/images/srs-bg3.png');
+            background-size: contain;
+            background-position: top center;
   }
+    .nav-list {
+      /* background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1) 100%), url('../assets/images/srs-bg3.png');
+      background-size: contain;
+      background-position: top center; */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction:row;
+      /* Change to column for mobile */
+      align-items: center;
+      width: 100%;
+      background-color: black;
+    }
+
+.nav-list li {
+  margin: 6px 0;
+  /* Add vertical space between items */
+}
 
   /* Optionally, you can also style the <a> elements for better touch accessibility */
-  .nav-list a {
-    display: block;
-    padding: 10px;
-    /* Easier to tap */
+    .nav-list a {
+      display: block;
+      padding: 10px;
+      font-size: 14px;
+      /* Adjust font size for readability */
+    }
+ 
+  /* == MAIN == */
+
+  main {
+    /* margin-top: 170px; */
+    background-image: none;
+    background-color: black;
   }
 
+  
+  .grid-section,
+  .grid-section.alt-layout {
+    grid-template-columns: 1fr;
+    /* Stack into a single column on small screens */
+  }
 
-/* == MAIN == */
-        .grid-section,
-        .grid-section.alt-layout {
-          grid-template-columns: 1fr;
-          /* Stack into a single column on small screens */
-        }
+  /* Override the sticky class for small screens */
+    nav#navbar.sticky {
+      position: relative;
+      top: auto;
+    }
 }
 
 /* TABLET */
