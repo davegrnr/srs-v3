@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+<========== HEADER ===========> 
+*/
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Equal width for each column */
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  /* Additional styling as needed */
+}
+
+.header-left img {
+  max-width: 100%;
+  /* Ensures the image is responsive */
+  height: auto;
+  /* Maintains aspect ratio */
+  border-radius: 20px;
+}
+
+.header-center h1 {
+  margin: 0;
+  /* Additional styling for the title */
+}
+
+.header-right span {
+  display: block;
+  /* Makes span behave like a block element */
+  /* Additional styling for the address */
+}
+
+/* 
+<========== NAVBAR ===========> 
+*/
+
+header,
+nav#navbar {
+  background-color: black;
+  color: white;
+  /* Change the text color to white for better contrast */
+  /* Add more properties as needed */
+}
+
+/* Reset the default styles for the list */
+.nav-list {
+  list-style-type: none;
+  /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Aligns items inline */
+  justify-content: center;
+  /* Centers items horizontally */
+}
+
+.nav-list li {
+  margin-right: 20px;
+  /* Space between items */
+}
+
+.nav-list li:last-child {
+  margin-right: 0;
+  /* Removes margin from the last item */
+}
+
+.nav-list a {
+  text-decoration: none;
+  /* Removes underline from links */
+  color: inherit;
+  /* Inherits color from parent */
+}
+
+/* 
+== STICKY NAV ==
+ */
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  /* Add this line */
+  z-index: 1000;
+  background-color: black;
+  /* Reset margin and padding if needed */
+  margin: 0;
+}
+
+/* Add additional styles as needed */
+
+/* Add this style for section content */
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  /* Adjust the max-width to your preference */
+  margin: 0 auto;
+  /* Center the content within the section */
+  padding: 20px;
+  /* Add padding as needed */
+  box-sizing: border-box;
+  /* Include padding within max-width */
+}
+
+/* Add this style for alternating layout */
+.grid-section.alt-layout .section-content {
+  flex-direction: row-reverse;
+}
+
+/* Add this style to ensure alternating margins */
+.grid-section:nth-child(even) .section-content {
+  margin-left: 15vw;
+}
+
+.grid-section:nth-child(odd) .section-content {
+  margin-right: 15vw;
+}
+.text-content,
+.image-content {
+  color: white;
+}
+
+/* 
+<========== MAIN ==========> 
+*/
+
+main {
+  background-image: url('../assets/images/srs-bg3.png');
+  /* linear-gradient(to right, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), transparent), */
+  /* Dark fade towards the center */
+  /* linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(86, 82, 82, 0.667) 100%),; */
+  /* Adjust the path as necessary */
+  background-size: cover;
+  padding: 0;
+  /* Ensures the image covers the entire area */
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: auto;
+  min-height: 100vh;
+  /* or any other appropriate value */
+  /* Centers the image */
+  /* Add more properties as needed */
+}

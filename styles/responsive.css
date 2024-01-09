@@ -1,0 +1,51 @@
+/* MOBILE | SMALL SCREEN */
+@media only screen and (max-width: 768px) {
+  /* == HEADER == */
+    .header-center h1 {
+        font-size: 20px;
+        /* Smaller font size for mobile */
+        /* Adjust the size as needed */
+      }
+    
+      /* If you have other text in the header you'd like to resize */
+      .header-left,
+      .header-right {
+        font-size: 14px;
+        /* Example: smaller font size for other header elements */
+      }
+
+  /* == NAV == */
+  .nav-list {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    /* Add vertical space between items */
+  }
+
+  /* Optionally, you can also style the <a> elements for better touch accessibility */
+  .nav-list a {
+    display: block;
+    padding: 10px;
+    /* Easier to tap */
+  }
+
+
+/* == MAIN == */
+        .grid-section,
+        .grid-section.alt-layout {
+          grid-template-columns: 1fr;
+          /* Stack into a single column on small screens */
+        }
+}
+
+/* TABLET */
+/* Example: Intermediate styles for screens between 769px and 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav-list {
+    /* Adjust styles for intermediate sizes */
+  }
+}
