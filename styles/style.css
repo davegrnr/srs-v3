@@ -4,13 +4,18 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
 /* 
 <========== HEADER ===========> 
 */
 
 header {
   height: 100px;
-  /* Adjust the height as needed */
+  padding-bottom: 10px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('../assets/images/mountains.png');
+  background-size: cover;
+  
 }
 .header-grid {
   display: grid;
@@ -35,11 +40,6 @@ header {
   /* Additional styling for the title */
 }
 
-.header-right span {
-  display: block;
-  /* Makes span behave like a block element */
-  /* Additional styling for the address */
-}
 
 /* 
 <========== NAVBAR ===========> 
@@ -56,11 +56,14 @@ nav#navbar {
 nav#navbar {
   background-color: black;
   color: white;
-  /* Change the text color to white for better contrast */
   padding: 20px 0;
-  /* Add vertical padding to increase navbar height */
-  /* Add more properties as needed */
-  height: 20px;
+  height: 15px;
+  position: relative;
+}
+
+/* Add this rule to remove default margin on ul */
+nav#navbar ul {
+  margin: 0;
 }
 
 /* Center the list items horizontally */
@@ -147,15 +150,16 @@ main {
 */
 
 .section-content {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(238, 236, 236);
   max-width: 100%;
-  /* Set a maximum width for the section content */
+  opacity: 93%;
+  /* Remove or adjust the min-width property */
   min-height: 400px;
-  margin: 20px auto;
-  display: flex;
+  margin: 15px auto;
+  display: flexbox;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 10px;
   flex-direction: row;
   /* Add this line to display image and text side by side */
@@ -165,7 +169,7 @@ main {
 
 .section-content .image-content {
   flex: 1;
-  max-width: 50%;
+  max-width: 60%;
   max-height: 400px;
   /* Set a maximum height for the image */
   overflow: hidden;
@@ -179,36 +183,73 @@ main {
   max-width: 50%;
   padding: 20px;
   box-sizing: border-box;
-  overflow: auto;
-  /* Enable overflow scrolling for text content */
+  overflow-x: auto;
+  /* Enable horizontal scrolling for text content */
 }
+
+
+.section-content .text-content-header {
+  align-items: center;
+}
+
+.section-content .text-content-header h2 {
+  align-self: flex-end;
+}
+
 .section-content-container {
-  padding: 20px;
+  padding:20px;
   display: flex;
   flex-direction: row;
   /* Add your desired padding here */
 }
 
 .section-content h2 {
-  text-decoration: underline;
-  color: #333;
+  color: black;
   font-size: 20px;
   /* Adjust font size */
   margin-bottom: 10px;
   flex: 1;
+  align-self: center;
   /* Expand to fill available space */
 }
 
 .section-content p {
   font-size: 16px;
   /* Adjust font size */
-  color: #555;
+  color: black;
   margin: 10px 0;
   flex: 2;
   /* Expand to fill available space */
 }
 
+.section-content hr {
+  background-color: black;
+  height: 2px;
+  border: none;
 
+}
+
+/* Remove the margin from all .section-content elements */
+.grid-section .section-content {
+  margin-top: 0;
+}
+
+/* Add padding to the .grid-section to offset the margin on the first child */
+.grid-section {
+  padding-top: 30px;
+}
+
+/* Add margin back to the first .section-content element */
+.grid-section .section-content:first-child {
+
+  margin-top: 60px;
+}
+
+/* Add margin back to all .section-content elements except the first child */
+.grid-section .section-content:not(:first-child) {
+  margin-top: 20px;
+  padding-top: 20px;
+}
 /* Add this style for alternating layout */
 .grid-section.alt-layout .section-content {
   flex-direction: row-reverse;
@@ -232,4 +273,50 @@ main {
 
 .phone {
   font-size: x-large;
+}
+
+/* 
+<========== SERVICES/TABLE ==========>
+*/
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+  min-width: 25%;
+  /* Center items horizontally */
+  text-align: center;
+  /* Center text content */
+}
+
+.ase-img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  /* Add space between the image and table */
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Add this to hide overflowing content */
+}
+
+.services-table {
+  max-width: 100%;
+  /* Make the table full width */
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+  /* Center table content */
+  width: auto;
+  /* Remove explicit width */
+  margin: 0 auto;
+  /* Center the table horizontally */
+}
+
+.services-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.services-table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
